@@ -36,7 +36,7 @@ function __fzy_cd -d "Change directory"
         set COMMAND $FZY_CD_COMMAND
     end
 
-    eval "$COMMAND | "(__fzycmd)" +m $FZY_DEFAULT_OPTS $FZY_CD_OPTS --query \"$fzy_query\"" | read -l select
+    eval "$COMMAND | fzy --query \"$fzy_query\"" | read -l select
 
     if not test -z "$select"
         builtin cd "$select"

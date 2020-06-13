@@ -11,7 +11,7 @@ function __fzy_find_file -d "List files and folders"
     -o -type l -print 2> /dev/null | sed 's@^\./@@'"
 
     begin
-        eval "$FZY_FIND_FILE_COMMAND | "(__fzycmd) "-m $FZY_DEFAULT_OPTS $FZY_FIND_FILE_OPTS --query \"$fzy_query\"" | while read -l s; set results $results $s; end
+        eval "$FZY_FIND_FILE_COMMAND | fzy --query \"$fzy_query\"" | while read -l s; set results $results $s; end
     end
 
     if test -z "$results"
